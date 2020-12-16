@@ -255,11 +255,7 @@ func createLobby(
 		CurrentDrawing:      make([]interface{}, 0, 0),
 	}
 
-	if len(customWords) > 1 {
-		rand.Shuffle(len(lobby.CustomWords), func(i, j int) {
-			lobby.CustomWords[i], lobby.CustomWords[j] = lobby.CustomWords[j], lobby.CustomWords[i]
-		})
-	}
+	
 
 	lobbies = append(lobbies, lobby)
 
