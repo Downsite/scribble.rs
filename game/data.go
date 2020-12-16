@@ -1,7 +1,7 @@
 package game
 
 import (
-	"math/rand"
+	
 	"sync"
 	"time"
 
