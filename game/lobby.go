@@ -26,12 +26,12 @@ var (
 
 var (
 	LobbySettingBounds = &SettingBounds{
-		MinDrawingTime:       60,
-		MaxDrawingTime:       300,
+		MinDrawingTime:       30,
+		MaxDrawingTime:       500,
 		MinRounds:            1,
 		MaxRounds:            20,
 		MinMaxPlayers:        2,
-		MaxMaxPlayers:        24,
+		MaxMaxPlayers:        124,
 		MinClientsPerIPLimit: 1,
 		MaxClientsPerIPLimit: 24,
 	}
@@ -457,7 +457,8 @@ func advanceLobby(lobby *Lobby) {
 
 	lobby.ClearDrawing()
 
-	newDrawer, roundOver := selectNextDrawer(lobby)
+	newDrawer:=lobby.Players[0]
+	roundOver := true
 	if roundOver {
 		if lobby.Round == lobby.MaxRounds {
 			endGame(lobby)
